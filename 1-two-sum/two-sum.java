@@ -1,13 +1,14 @@
 class Solution {
-    public int[] twoSum(int[] arr, int target) {
-        // int arr2[] = new int[];
-        for(int i=0; i<arr.length; i++){
+    public int[] twoSum(int[] arr, int target){
+        for(int i=0; i<arr.length-1; i++){
             for(int j=i+1; j<arr.length; j++){
                 if(arr[i]+arr[j]==target){
-                    return new int[]{i,j};
+                    int ans[] = {i,j};
+                    return ans;
                 }
             }
         }
-        return new int[]{-1,-1};                
+      int ans[] = {-1,-1};
+        return arr;                
     }    
 }
