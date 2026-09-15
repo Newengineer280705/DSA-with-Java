@@ -1,7 +1,7 @@
 class Solution {
     public int majorityElement(int[] nums) {
 
-        //bruteforce approch
+        //bruteforce approch (n)2
     //     for(int i=0; i<nums.length; i++){
     //         int frq=0;
     //         for(int j=0; j<nums.length; j++){
@@ -16,28 +16,29 @@ class Solution {
     //     return -1;
     // }}
 
-    //optomize btureforce
-    Arrays.sort(nums);
 
-    int frq=1, ans = nums[0];
-    for(int i=1; i<nums.length; i++){
-        if(nums[i] == nums[i-1]){
-            frq++;
-        }
-        else{
-            frq=1;
-            ans = nums[i];
-        }
+    //optomize btureforce (nlogn)
+//     Arrays.sort(nums);
 
-        if(frq >nums.length/2 ){
-            return ans;
-        }
-    }
-    return ans;
-    }
-}
+//     int frq=1, ans = nums[0];
+//     for(int i=1; i<nums.length; i++){
+//         if(nums[i] == nums[i-1]){
+//             frq++;
+//         }
+//         else{
+//             frq=1;
+//             ans = nums[i];
+//         }
+
+//         if(frq >nums.length/2 ){
+//             return ans;
+//         }
+//     }
+//     return ans;
+//     }
+// }
     
-        //Hashmap approch
+        //Hashmap approch (n)
         // HashMap<Integer, Integer> map = new HashMap<>();
 
         // for (int value : nums) {
@@ -49,3 +50,20 @@ class Solution {
         //     }
         // }
         // return -1;
+
+        //Boyer-Moore Algorithn (n)
+        int frq=0, ans=0;
+        for(int i=0; i<nums.length; i++){
+            if(frq == 0){
+                ans = nums[i];
+            }
+            if(ans == nums[i]){
+                frq++;
+            }
+            else{
+                frq--;
+            }
+        }
+        return ans;
+    }
+}
