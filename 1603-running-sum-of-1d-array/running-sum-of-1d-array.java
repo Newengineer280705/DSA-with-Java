@@ -1,12 +1,17 @@
 class Solution {
     public int[] runningSum(int[] nums) {
-       // ArrayList<Integer> list = new ArrayList<>();
-        int sum =0;
-        int result[] = new int[nums.length];
+        // ArrayList<Integer> list = new ArrayList<>();
+
+        int ans[] = new int[nums.length];
+
         for(int i=0; i<nums.length; i++){
-            sum += nums[i];
-           result[i] = sum;
+            int sum = 0;
+            for(int j=0; j<=i; j++){
+                sum += nums[j];
+            }
+            ans[i] = sum;     
         }
-        return result;       
+        return ans;
+
     }
 }
