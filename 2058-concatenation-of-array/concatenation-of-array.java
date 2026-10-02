@@ -1,5 +1,6 @@
 class Solution {
     public int[] getConcatenation(int[] nums) {
+
     //  """ int ans[] = new int[2*nums.length];
     //    for(int i=0; i<ans.length; i++){
     //     if(i>=nums.length){
@@ -10,19 +11,26 @@ class Solution {
     //     }
     // }
     // return ans;"""
-    List<Integer> arr = new ArrayList<>();
+    ////////////////////////////////////////
+    // List<Integer> arr = new ArrayList<>();
+    // for(int val : nums){
+    //     arr.add(val);
+    // }
+    // for(int val : nums){
+    //     arr.add(val);
+    // }
+    // int ans[] = new int[arr.size()];
+    // for(int i=0; i<arr.size(); i++){
+    //     ans[i] = arr.get(i);
+    // }
+    // return ans;
 
-    for(int val : nums){
-        arr.add(val);
+    ///////////////////////////////////////
+    int result[] = new int[2*nums.length];
+    for(int i=0; i<nums.length; i++){
+        result[i] = nums[i];
+        result[i+nums.length] = nums[i];
     }
-    for(int val : nums){
-        arr.add(val);
-    }
-    int ans[] = new int[arr.size()];
-    for(int i=0; i<arr.size(); i++){
-        ans[i] = arr.get(i);
-    }
-    return ans;
-
+    return result;
     }
 } 
