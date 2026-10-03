@@ -8,7 +8,7 @@ class Solution {
                 // Increasing side
                 st = mid + 1;
             }
-            else {
+            else if(arr[mid]>arr[mid+1]){
                 // Decreasing side
                 end = mid;
             }
