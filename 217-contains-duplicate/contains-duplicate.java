@@ -4,11 +4,9 @@ class Solution {
         for(int val: nums){
             set.add(val);
         }
-        if(set.size() == nums.length){
-            return false;
-        }
-        else{
+        if(set.size() != nums.length){
             return true;
         }
+        return false;
     }
 }
