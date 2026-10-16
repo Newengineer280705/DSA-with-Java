@@ -11,7 +11,7 @@ class Solution {
         }
         while(st<=end){
             int mid = st + (end-st)/2;
-            if(mid==x/mid){
+            if(mid==x/mid){   //if(mid*mid==x)
                 return mid;}
             else if(mid>x/mid){
                 end = mid-1;}
