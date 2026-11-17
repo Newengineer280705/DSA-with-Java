@@ -5,18 +5,13 @@ class Solution {
         int end = nums.length - 1;
 
         while(st <= end) {
-
             if(nums[st] == val) {
-
                 nums[st] = nums[end];
                 end--;
-
             } else {
-
                 st++;
             }
         }
-
         return end + 1;
     }
 }
